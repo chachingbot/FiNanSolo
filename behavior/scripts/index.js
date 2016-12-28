@@ -53,11 +53,39 @@ exports.handle = (client) => {
     }
   })
 
+  const handleDefine = client.createStep({
+    extractInfo(){
+      let subject = client.getMessagePart().classification.sub_type.value
+      console.log("handling define stuff", subject)
+      if(subject){
+        client.updateConversationState({
+          subject: subject,
+        })
+      }
+    },
+    satisfied(){
+      return false
+    },
+    prompt(){
+      if(client.getConversationState().subject == "budgeting"){
+        client.addResponse('definition/budgeting')
+      }
+      else if(client.getConversationState().subject == "compound_interest"){
+        client.addResponse('definition/compound_interest')
+      }
+      else{
+        client.addTextResponse('Sorry, I will need to read up more on this')
+      }
+      client.done()
+    }
+  })
+
   client.runFlow({
     classifications: {
       // map inbound message classifications to names of streams
       greeting: 'greeting',
-      goodbye: 'goodbye'
+      goodbye: 'goodbye',
+      define: 'define'
     },
     autoResponses: {
       // configure responses to be automatically sent as predicted by the machine learning model
@@ -65,6 +93,7 @@ exports.handle = (client) => {
     streams: {
       greeting: handleGreeting,
       goodbye: handleGoodbye,
+      define: handleDefine,
       main: 'onboarding',
       onboarding: [sayHello],
       end: [untrained],
