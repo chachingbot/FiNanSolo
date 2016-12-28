@@ -1,16 +1,16 @@
 ---
 title: greeting_01
-timestamp: 2016-12-28T13:13:57.564976006+08:00
+timestamp: 2016-12-28T14:04:13.001050436+08:00
 ---
 
-Hello
+hey
 * greeting
 
-< Sup, how's it goin
-* affirmative/accept
+< Sup buddy!
+* greeting
 
-Goodbye
+See you!
 * goodbye
 
-< See you around buddy!
-* welcome
+< See you buddy!
+* goodbye
