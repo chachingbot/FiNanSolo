@@ -38,7 +38,7 @@ exports.handle = (client) => {
       return false
     },
     prompt(){
-      client.addTextResponse("Sup, how's it goin?")
+      client.addResponse('greeting')
       client.done()
     }
   })
@@ -48,7 +48,7 @@ exports.handle = (client) => {
       return false
     },
     prompt(){
-      client.addTextResponse("See you around buddy!")
+      client.addResponse('goodbye')
       client.done()
     }
   })
