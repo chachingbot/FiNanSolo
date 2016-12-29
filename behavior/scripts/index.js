@@ -70,8 +70,32 @@ exports.handle = (client) => {
       if(client.getConversationState().subject == "budgeting"){
         client.addResponse('definition/budgeting')
       }
+      else if(client.getConversationState().subject == "bto"){
+        client.addResponse('definition/bto')
+      }
+      else if(client.getConversationState().subject == "collateral"){
+        client.addResponse('definition/collateral')
+      }
       else if(client.getConversationState().subject == "compound_interest"){
         client.addResponse('definition/compound_interest')
+      }
+      else if(client.getConversationState().subject == "cpf"){
+        client.addResponse('definition/cpf')
+      }
+      else if(client.getConversationState().subject == "credit_score"){
+        client.addResponse('definition/credit_score')
+      }
+      else if(client.getConversationState().subject == "home_loan"){
+        client.addResponse('definition/home_loan')
+      }
+      else if(client.getConversationState().subject == "inflation"){
+        client.addResponse('definition/inflation')
+      }
+      else if(client.getConversationState().subject == "medisave"){
+        client.addResponse('definition/medisave')
+      }
+      else if(client.getConversationState().subject == "mortgage"){
+        client.addResponse('definition/mortgage')
       }
       else{
         client.addTextResponse('Sorry, I will need to read up more on this')

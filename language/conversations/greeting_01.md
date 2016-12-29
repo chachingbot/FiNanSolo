@@ -9,8 +9,38 @@ hey
 < Sup buddy!
 * greeting
 
+hello
+* greeting
+
+< How's it going!
+* greeting
+
+Sup
+* greeting
+
+< Hey, what's up!
+* greeting
+
+Yo
+* greeting
+
+< Yo, what's up!
+* greeting
+
 See you!
 * goodbye
 
 < See you buddy!
+* goodbye
+
+Bye
+* goodbye
+
+< See ya!
+* goodbye
+
+cya
+* goodbye
+
+< See you soon!
 * goodbye
