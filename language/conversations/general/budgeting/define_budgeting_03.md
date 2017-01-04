@@ -1,9 +1,9 @@
 ---
-title: define_budgeting_01
+title: define_budgeting_03
 timestamp: 2016-12-28T16:32:44.25237845+08:00
 ---
 
-What is a [budget](budgeting)?
+What is a budget?
 * define/budgeting
 
 < Budgeting is how you plan to spend and save your monthly income. After you take out things like rent, phone bills etc., you gotta have enough to buy food! So, plan ahead and be secure.
