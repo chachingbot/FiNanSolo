@@ -39,6 +39,10 @@ exports.handle = (client) => {
     },
     prompt(){
       client.addResponse('greeting')
+      var username = client.getMessagePart().sender.first_name || "machi"
+      client.addResponse('greeting',{
+        name: username
+      });
       client.done()
     }
   })
@@ -48,7 +52,10 @@ exports.handle = (client) => {
       return false
     },
     prompt(){
-      client.addResponse('goodbye')
+      var username = client.getMessagePart().sender.first_name || "bro" ;
+      client.addResponse('goodbye',{
+        name: username
+      });
       client.done()
     }
   })

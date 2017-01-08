@@ -6,7 +6,7 @@ timestamp: 2016-12-28T14:04:13.001050436+08:00
 hey
 * greeting
 
-< Sup buddy!
+< Sup [buddy](name)!
 * greeting
 
 hello
@@ -18,19 +18,19 @@ hello
 Sup
 * greeting
 
-< Hey, what's up!
+< Hey [buddy](name), what's up!
 * greeting
 
 Yo
 * greeting
 
-< Yo, what's up!
+< Yo, what's up [buddy](name)!
 * greeting
 
 See you!
 * goodbye
 
-< See you buddy!
+< See you [buddy](name)!
 * goodbye
 
 Bye
