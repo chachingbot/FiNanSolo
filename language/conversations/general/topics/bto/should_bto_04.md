@@ -7,7 +7,7 @@ Is it a good idea for me to get BTO?
 * should/bto
 
 < Are you single?
-* prompt/marital_status
+* prompt/marital_status_single
 
 Yes
 * affirmation
