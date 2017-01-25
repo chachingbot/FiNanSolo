@@ -38,8 +38,7 @@ exports.handle = (client) => {
       return false
     },
     prompt(){
-      client.addResponse('greeting')
-      var username = client.getMessagePart().sender.first_name || "machi"
+      var username = client.getMessagePart().sender.first_name || "buddy"
       client.addResponse('greeting',{
         name: username
       });
@@ -52,7 +51,7 @@ exports.handle = (client) => {
       return false
     },
     prompt(){
-      var username = client.getMessagePart().sender.first_name || "bro" ;
+      var username = client.getMessagePart().sender.first_name || "there" ;
       client.addResponse('goodbye',{
         name: username
       });

@@ -3,14 +3,11 @@ title: admin_actions
 timestamp: 2016-12-28T14:04:13.001050436+08:00
 ---
 
-kill all users
-* reset_users
+moist booty
+* reset_user
 
-< Who are you to tell me that...
-* prompt/identification
-
-I am [Wyatt](identity)
-* provide_identification
+Moist Booty
+* reset_user
 
 < Yes my lord...
-* obey/reset_users
+* reseting_user
