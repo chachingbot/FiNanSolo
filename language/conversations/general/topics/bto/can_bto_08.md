@@ -24,7 +24,7 @@ What bracket do I fall under?
 * user/household_income
 
 [6000](household_income).
-* user/household_income_given
+* value/household_income_given
 
 < Based on your household income, you are eligible for flats with 3 rooms or more.
 * house_type_eligibility_below_12000/bto
