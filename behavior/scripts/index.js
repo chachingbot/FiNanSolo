@@ -43,10 +43,10 @@ exports.handle = (client) => {
 
   const collectAge = client.createStep({
     extractInfo() {
-      let age = firstOfEntityRole(client.getMessagePart(), 'age')
+      let age = client.getFirstEntityWithRole(client.getMessagePart(), 'age')
       var user = client.getMessagePart().sender.id;
       if(age){
-        client.updateUser(user, "age", age);
+        client.updateUser(user, "age", age.value);
       }
     },
 
@@ -191,6 +191,9 @@ exports.handle = (client) => {
     prompt(){
       var user = client.getMessagePart().sender.id;
       client.resetUser(user)
+      client.updateConversationState({
+        helloSent: false
+      })
       client.addTextResponse('Goodbye, my friend. Thou booty shalt be moist');
       client.done()
     }
@@ -201,8 +204,9 @@ exports.handle = (client) => {
       // map inbound message classifications to names of streams
       greeting: 'greeting',
       goodbye: 'goodbye',
-      define: 'define'
-      reset_user: 'reset_user'
+      define: 'define',
+      reset_user: 'reset_user',
+      onboard: 'onboarding'
     },
     autoResponses: {
       // configure responses to be automatically sent as predicted by the machine learning model

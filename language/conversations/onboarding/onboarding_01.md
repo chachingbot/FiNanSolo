@@ -1,5 +1,5 @@
-Hello.
-* greeting
+Get me onboard
+* onboard
 
 < Hi there! The name is Ching, and I'm here to help you with some of your financial queries.
 * onboarding/welcome
