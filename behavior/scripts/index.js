@@ -22,7 +22,7 @@ exports.handle = (client) => {
       let response = client.getMessagePart().classification.base_type
       var user = client.getMessagePart().sender.id;
       if(response){
-        if(response=="affirmative"){
+        if(response=="affirmative/generic"){
           client.updateUser(user, "employed", true);
         }else{
           client.updateUser(user, "employed", false);
