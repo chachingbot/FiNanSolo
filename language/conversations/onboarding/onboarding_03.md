@@ -10,21 +10,21 @@ Get me onboard
 < Firstly, are you working?
 * onboarding/employment
 
-Yeah
-* affirmative
+Nope
+* decline
 
-< Cool. How old are you right now? Don't worry I won't tell anyone.
+< Aight. How old are you right now? Don't worry I won't tell anyone.
 * onboarding/age
 
-[24](age)
+[18](age)
 * user/age
 
 < And lastly, are you Singaporean, PR or neither?
 * onboarding/singaporean
 
 # User given buttons to select
-Singaporean
-* user/singaporean
+Neither
+* user/foreigner
 
 < Awesome! Now fire away anything that you want to know about the local financial schemes (CPF, BTO, Medisave, etc.) or simply financial terms that you wanna know more about (inflation, budgeting, credit scores, etc.).
 * onboarding/complete
