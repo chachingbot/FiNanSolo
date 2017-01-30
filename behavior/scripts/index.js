@@ -10,28 +10,41 @@ exports.handle = (client) => {
     prompt() {
       client.addResponse('onboarding/welcome')
       client.addResponse('onboarding/collect_info')
+      client.addResponse('onboarding/employment');
       client.updateConversationState({
         helloSent: true
       })
       client.done()
-    }
+    },
+
   })
 
   const collectEmployment = client.createStep({
     extractInfo() {
       let response = client.getMessagePart().classification.base_type
-      var user = client.getMessagePart().sender.id;
+      // Get user id for current sender
+      var userId = client.getMessagePart().sender.id;
       if(response){
-        if(response=="affirmative"){
-          client.updateUser(user, "employed", true);
-        }else{
-          client.updateUser(user, "employed", false);
+        console.log('Response from user: ', response, userId);
+        if(response.value == "affirmative"){
+          // Update user metadata
+          client.updateUser(userId, 'metadata', {employed: true})
+        }else if(response.value == "decline"){
+          // Update user metadata
+          client.updateUser(userId, 'metadata', {employed: false})
         }
       }
     },
 
     satisfied() {
-      return Boolean(client.getMessagePart().sender.employed)
+      var userId = client.getMessagePart().sender.id;
+      if(client.getUsers()[userId].metadata){
+        console.log("getUsers metadata", client.getUsers()[userId].metadata);
+        console.log("getMessagePart metadata", client.getMessagePart().sender.metadata);
+        return Boolean(client.getUsers()[userId].metadata.employed);
+      }else{
+        return false;
+      }
     },
 
     prompt() {
@@ -46,12 +59,18 @@ exports.handle = (client) => {
       let age = client.getFirstEntityWithRole(client.getMessagePart(), 'age')
       var user = client.getMessagePart().sender.id;
       if(age){
-        client.updateUser(user, "age", age.value);
+        client.updateUser(user, 'metadata', {age: age.value})
       }
     },
 
     satisfied() {
-      return Boolean(client.getMessagePart().sender.age)
+      var userId = client.getMessagePart().sender.id;
+      if(client.getUsers()[userId].metadata){
+        console.log("getUsers metadata", client.getUsers()[userId].metadata);
+        return Boolean(client.getUsers()[userId].metadata.age);
+      }else{
+        return false;
+      }
     },
 
     prompt() {
@@ -67,15 +86,21 @@ exports.handle = (client) => {
       var user = client.getMessagePart().sender.id;
       if(response){
         if(response=="affirmative"){
-          client.updateUser(user, "nationality", "singaporean");
+          // client.updateUser(user, 'metadata', {nationality: "singaporean"})
         }else{
-          client.updateUser(user, "nationality", "others");
+          // client.updateUser(user, 'metadata', {nationality: "others"})
         }
       }
     },
 
     satisfied() {
-      return Boolean(client.getMessagePart().sender.nationality)
+      var userId = client.getMessagePart().sender.id;
+      if(client.getUsers()[userId].metadata){
+        console.log("getUsers metadata", client.getUsers()[userId].metadata);
+        return Boolean(client.getUsers()[userId].metadata.nationality);
+      }else{
+        return false;
+      }
     },
 
     prompt() {
@@ -136,10 +161,9 @@ exports.handle = (client) => {
   const handleDefine = client.createStep({
     extractInfo(){
       let subject = client.getMessagePart().classification.sub_type.value
-      console.log("handling define stuff", subject)
       if(subject){
         client.updateConversationState({
-          subject: subject,
+          topic: subject,
         })
       }
     },
@@ -147,34 +171,34 @@ exports.handle = (client) => {
       return false;
     },
     prompt(){
-      if(client.getConversationState().subject == "budgeting"){
+      if(client.getConversationState().topic == "budgeting"){
         client.addResponse('definition/budgeting');
       }
-      else if(client.getConversationState().subject == "bto"){
+      else if(client.getConversationState().topic == "bto"){
         client.addResponse('definition/bto');
       }
-      else if(client.getConversationState().subject == "collateral"){
+      else if(client.getConversationState().topic == "collateral"){
         client.addResponse('definition/collateral');
       }
-      else if(client.getConversationState().subject == "compound_interest"){
+      else if(client.getConversationState().topic == "compound_interest"){
         client.addResponse('definition/compound_interest');
       }
-      else if(client.getConversationState().subject == "cpf"){
+      else if(client.getConversationState().topic == "cpf"){
         client.addResponse('definition/cpf');
       }
-      else if(client.getConversationState().subject == "credit_score"){
+      else if(client.getConversationState().topic == "credit_score"){
         client.addResponse('definition/credit_score');
       }
-      else if(client.getConversationState().subject == "home_loan"){
+      else if(client.getConversationState().topic == "home_loan"){
         client.addResponse('definition/home_loan');
       }
-      else if(client.getConversationState().subject == "inflation"){
+      else if(client.getConversationState().topic == "inflation"){
         client.addResponse('definition/inflation');
       }
-      else if(client.getConversationState().subject == "medisave"){
+      else if(client.getConversationState().topic == "medisave"){
         client.addResponse('definition/medisave');
       }
-      else if(client.getConversationState().subject == "mortgage"){
+      else if(client.getConversationState().topic == "mortgage"){
         client.addResponse('definition/mortgage');
       }
       else{
