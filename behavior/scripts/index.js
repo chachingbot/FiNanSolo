@@ -10,11 +10,10 @@ exports.handle = (client) => {
     prompt() {
       client.addResponse('onboarding/welcome')
       client.addResponse('onboarding/collect_info')
-      client.addResponse('onboarding/employment');
       client.updateConversationState({
         helloSent: true
       })
-      client.done()
+      return 'init.proceed';
     },
 
   })
@@ -28,10 +27,10 @@ exports.handle = (client) => {
         console.log('Response from user: ', response, userId);
         if(response.value == "affirmative"){
           // Update user metadata
-          client.updateUser(userId, 'metadata', {employed: true})
+          client.updateUser(userId, {metadata: {employed: true}})
         }else if(response.value == "decline"){
           // Update user metadata
-          client.updateUser(userId, 'metadata', {employed: false})
+          client.updateUser(userId, {metadata: {employed: false}})
         }
       }
     },
@@ -59,7 +58,7 @@ exports.handle = (client) => {
       let age = client.getFirstEntityWithRole(client.getMessagePart(), 'age')
       var user = client.getMessagePart().sender.id;
       if(age){
-        client.updateUser(user, 'metadata', {age: age.value})
+        client.updateUser(user, {metadata: {age: age.value}})
       }
     },
 
@@ -85,10 +84,10 @@ exports.handle = (client) => {
       let response = client.getMessagePart().classification.base_type
       var user = client.getMessagePart().sender.id;
       if(response){
-        if(response=="affirmative"){
-          // client.updateUser(user, 'metadata', {nationality: "singaporean"})
+        if(response.value == "affirmative"){
+          client.updateUser(user, {metadata: {nationality: "singaporean"}})
         }else{
-          // client.updateUser(user, 'metadata', {nationality: "others"})
+          client.updateUser(user, {metadata: {nationality: "others"}})
         }
       }
     },
