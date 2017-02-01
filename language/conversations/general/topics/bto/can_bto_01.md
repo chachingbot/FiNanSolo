@@ -11,9 +11,10 @@ Can I get it?
 < What is your marital status?
 * prompt/marital_status
 
-Married
-* user/married
+[Married](marital_status)
+* marital_status
 
+#REMOVE AND PUT IN KNOWLEDGE
 < Since you are married, you can apply for a HDB flat under the Public Scheme with your spouse and children, as long as you fall within the appropriate income bracket for the house you intend to purchase.
 * can_ans_married/bto
 
@@ -21,10 +22,14 @@ What is my income bracket?
 * income_ceiling/bto
 
 < What is your rough household income? (including all residents)
-* user/household_income
+* prompt/household_income
 
 My household income is roughly [10000](household_income).
-* user/household_income_given
+* provide_household_income
 
+I rather not say
+* decline
+
+#REMOVE
 < Based on your household income, you are eligible for flats with 3 rooms or more.
 * house_type_eligibility_below_12000/bto
