@@ -19,7 +19,9 @@ var knowledge = {
     },
     how: ["BTO flats are announced every 3 months. Once you have checked the schedule and your eligibility, fill in the application form and submit it within the one week submission period at www.hdb.gov.sg. You will be notified of the results of the ballot in 1.5 months. You can get more information at http://www.hdb.gov.sg/cs/infoweb/residential/buying-a-flat/new/buying-process/timeline."]
   },
-  cpf:{
-
+  budgeting:{
+    define: ["Budgeting is how you plan to spend and save your monthly income. After you take out things like rent, phone bills etc., you gotta have enough to buy food! So, plan ahead and be secure."],
+    should: ["Yes, most definitely! Budgeting is the simplest practice to track your finances and stay within your limits.", "For sure! Its best to plan out your expenses. This will keep you in check.", "Yes you should. Making a plan will go a long way in helping you save and spend within your means."],
+    
   },
 }
