@@ -21,7 +21,6 @@ var knowledge = {
   },
   budgeting:{
     define: ["Budgeting is how you plan to spend and save your monthly income. After you take out things like rent, phone bills etc., you gotta have enough to buy food! So, plan ahead and be secure."],
-    should: ["Yes, most definitely! Budgeting is the simplest practice to track your finances and stay within your limits.", "For sure! Its best to plan out your expenses. This will keep you in check.", "Yes you should. Making a plan will go a long way in helping you save and spend within your means."],
-    
+    should: ["Yes, most definitely! Budgeting is the simplest practice to track your finances and stay within your limits.", "For sure! Its best to plan out your expenses. This will keep you in check.", "Yes you should. Making a plan will go a long way in helping you save and spend within your means."]
   },
 }
