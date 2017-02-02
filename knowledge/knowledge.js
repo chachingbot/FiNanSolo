@@ -1,7 +1,7 @@
 var knowledge = {
   prompt: {
-    marital_status: [""],
-
+    marital_status: ["What is your marital status?"],
+    household_income: ["What is your rough household income? (including all residents)"]
   },
   bto:{
     define: ["BTO is a flexible program for flat allocation. If you intend to buy a HDB in the near future, you can apply for a BTO flat, which will only be completed in a few years, saving you some money."],
@@ -17,9 +17,7 @@ var knowledge = {
       not_sg: ["Sorry, but since you are neither a Singaporean Citizen nor PR, you are ineligible for a BTO application."],
       pr: ["To apply for BTO, you need to apply along with at least one Singaporean Citizen."]
     },
-    how: {
-
-    }
+    how: ["BTO flats are announced every 3 months. Once you have checked the schedule and your eligibility, fill in the application form and submit it within the one week submission period at www.hdb.gov.sg. You will be notified of the results of the ballot in 1.5 months. You can get more information at http://www.hdb.gov.sg/cs/infoweb/residential/buying-a-flat/new/buying-process/timeline."]
   },
   cpf:{
 
