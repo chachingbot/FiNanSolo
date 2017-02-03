@@ -6,5 +6,11 @@ timestamp: 2016-12-28T16:43:01.525032347+08:00
 What is collateral?
 * define/collateral
 
-< Collateral is security for the lender or bank. In case you are unable to pay back your loan, the lender will take the collateral to make up for their losses.
-* definition/collateral
+Tell me more about collateral?
+* define/collateral
+
+Collateral?
+* define/collateral
+
+What if I cant pay back my loan?
+* define/collateral

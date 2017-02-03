@@ -23,4 +23,13 @@ var knowledge = {
     define: ["Budgeting is how you plan to spend and save your monthly income. After you take out things like rent, phone bills etc., you gotta have enough to buy food! So, plan ahead and be secure."],
     should: ["Yes, most definitely! Budgeting is the simplest practice to track your finances and stay within your limits.", "For sure! Its best to plan out your expenses. This will keep you in check.", "Yes you should. Making a plan will go a long way in helping you save and spend within your means."]
   },
+  collateral:{
+    define: ["Collateral is security for the lender or bank. In case you are unable to pay back your loan, the lender will take the collateral to make up for their losses."]
+  }
+  compound_interest:{
+    define: ["Compound interest is the best way for your money to make you more money. Normal interest rates are applied on one amount, but compound interest adds on to the money you already made. If you want to learn more check out: https://youtu.be/wf91rEGw88Q"]
+  }
+  cpf:{
+    define:["CPF or Central Provident Fund is a compulsory savings plan for Singaporeans and Permanent Residents to fund retirement, healthcare and housing."]
+  }
 }
