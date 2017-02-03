@@ -30,6 +30,24 @@ var knowledge = {
     define: ["Compound interest is the best way for your money to make you more money. Normal interest rates are applied on one amount, but compound interest adds on to the money you already made. If you want to learn more check out: https://youtu.be/wf91rEGw88Q"]
   }
   cpf:{
-    define:["CPF or Central Provident Fund is a compulsory savings plan for Singaporeans and Permanent Residents to fund retirement, healthcare and housing."]
+    define: ["CPF or Central Provident Fund is a compulsory savings plan for Singaporeans and Permanent Residents to fund retirement, healthcare and housing."]
+  }
+  credit_score:{
+    define: ["A credit score is basically a value that helps lenders (banks mostly) calculate how likely you are to default on your loan. You can learn more about credit scores in Singapore here http://www.creditbureau.com.sg/credit-score."]
+  }
+  home_loan:{
+    define: ["Not to be confused with Home Alone, a home loan is a sum of money borrowed from a bank or other issuing authority to finance the purchase of a home."]
+  }
+  inflation:{
+    define: ["Remember when chicken rice cost only 2$? Due to a lot of pressures, such as rising demand, limited supply, government spending, and wage increases, the price of goods and services tends to go up with time. This is inflation."]
+  }
+  medisave:{
+    define: ["Medisave is a section of your CPF used for medical expenses."]
+  }
+  mortgage:{
+    define: ["A mortgage is a home loan for which the collateral is the home itself."]
+  }
+  student_loan:{
+    define: ["A student loan is an amount of money borrowed from a lending institution to help you pay for post-secondary education."]
   }
 }
