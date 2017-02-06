@@ -11,20 +11,14 @@ BTO can?
 < What is your marital status?
 * prompt/marital_status
 
-Widowed
-* user/widowed
-
-< As long as you have children, you can apply for a HDB flat under the Public Scheme. The type of flat you are eligible for will depend on your income bracket.
-* can_ans_widowed/bto
+[Widowed](marital_status)
+* marital_status
 
 How do I check my flat eligibility?
 * income_ceiling/bto
 
 < What is your rough household income? (including all residents)
-* user/household_income
+* prompt/household_income
 
 [12000](household_income).
-* user/household_income_given
-
-< Based on your household income, you are only eligible for flats with 4 rooms or more.
-* house_type_eligibility_above_12000/bto
+* provide_household_income
