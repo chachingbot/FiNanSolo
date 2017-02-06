@@ -40,6 +40,7 @@ exports.handle = (client) => {
       if(client.getUsers()[userId].metadata){
         console.log("getUsers metadata", client.getUsers()[userId].metadata);
         console.log("getMessagePart metadata", client.getMessagePart().sender.metadata);
+        console.log(client.getMessagePart().sender);
         return Boolean(client.getUsers()[userId].metadata.employed);
       }else{
         return false;
